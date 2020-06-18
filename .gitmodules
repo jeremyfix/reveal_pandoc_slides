@@ -10,3 +10,6 @@
 [submodule "reveal-pdfexport"]
 	path = plugins/reveal-pdfexport
 	url = git@github.com:McShelby/reveal-pdfexport.git
+[submodule "eqref"]
+	path = pandoc-eqref
+	url = git@github.com:yangle/pandoc-eqref.git
