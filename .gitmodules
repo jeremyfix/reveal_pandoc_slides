@@ -4,9 +4,6 @@
 [submodule "reveal.js-plugins"]
 	path = plugins/reveal.js-plugins
 	url = git@github.com:rajgoel/reveal.js-plugins.git
-[submodule "pandoc-eqref"]
-	path = pandoc-eqref
-	url = git@github.com:yangle/pandoc-eqref.git
 [submodule "reveal.js-elapsed-time-bar"]
 	path = plugins/reveal.js-elapsed-time-bar
 	url = git@github.com:tkrkt/reveal.js-elapsed-time-bar.git
