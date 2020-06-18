@@ -78,6 +78,8 @@ $highlighting-css$
 					$if(date)$
 					<p class="date">$date$</p>
 					$endif$
+					<!-- Place this tag where you want the button to render. -->
+					<a class="github-button" href="https://github.com/jeremyfix/reveal_pandoc_slides/fork" data-icon="octicon-repo-forked" aria-label="Fork jeremyfix/reveal_pandoc_slides on GitHub">Fork me on GitHub</a>
 				</section>
 				$endif$
 				$if(toc)$
@@ -91,7 +93,7 @@ $highlighting-css$
 		</div>
 
 		<script src="$revealjs-url$/dist/reveal.js"></script>
-		<script src="$revealjs-url$/plugin/pdfexport/pdfexport.js"></script>
+		<script src="plugins/reveal-pdfexport/pdfexport.js"></script>
 		<script>
 
 			// Full list of configuration options available at:
@@ -212,17 +214,13 @@ $highlighting-css$
 				maxScale: $maxScale$,
 				$endif$
 
-
-
-
 				// Optional reveal.js plugins
-
 				dependencies: [
 
-					{ src: '$revealjs-url$/plugin/notes/notes.js', async: true },
-					{ src: '$revealjs-url$/plugin/menu/menu.js', async: true },
-					{ src: '$revealjs-url$/plugin/chalkboard/chalkboard.js', async: false},
-					{ src: '$revealjs-url$/plugin/elapsed-time-bar/elapsed-time-bar.js'},
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'plugins/reveal.js-plugins/menu/menu.js', async: true },
+					{ src: 'plugins/reveal.js-plugins/chalkboard/chalkboard.js', async: false},
+					{ src: 'plugins/reveal.js-elapsed-time-bar/plugin/elapsed-time-bar/elapsed-time-bar.js'},
 				],
 
 				plugins: [
