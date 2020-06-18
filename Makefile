@@ -4,7 +4,7 @@ pdf_slides=$(patsubst %.md,%.pdf, $(addprefix build/, $(notdir $(md_slides))))
 
 all:buildir $(html_slides) $(pdf_slides)
 	echo $(pdf_slides)
-	@cp -rf reveal.js build/
+	@cp -rf reveal.js reveal.js-plugins build/
 	@echo "Done"
 
 buildir:
@@ -20,7 +20,7 @@ build/%.html: slides/%.md template.html
 		--mathjax -V controls \
 		$< \
 		--template=template.html \
-		--filter ./pandoc-eqref \
+		--filter ./pandoc-eqref/pandoc-eqref \
 		> $@ 
 
 build/%.pdf: slides/%.md
@@ -29,5 +29,5 @@ build/%.pdf: slides/%.md
 		-t beamer \
 		--mathjax -V controls \
 		$< \
-		--filter ./pandoc-eqref \
+		--filter ./pandoc-eqref/pandoc-eqref \
 		> $@ 
