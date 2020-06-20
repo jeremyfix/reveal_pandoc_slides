@@ -22,7 +22,6 @@ build/%.html: slides/%.md template.html
 		-V date="`LC_TIME=en_US.UTF-8 date "+%B %e, %Y"`" \
 		$< \
 		--template=template.html \
-		--filter ./pandoc-eqref/pandoc-eqref \
 		> $@ 
 
 build/%.pdf: slides/%.md
@@ -33,5 +32,4 @@ build/%.pdf: slides/%.md
 		-V date="`LC_TIME=en_US.UTF-8 date "+%B %e, %Y"`" \
 	   	-V controls \
 		$< \
-		--filter ./pandoc-eqref/pandoc-eqref \
 		> $@ 

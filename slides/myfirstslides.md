@@ -44,7 +44,7 @@ We shall write a sequence of math expressions :
 y&=2
 \end{align}
 
-The equation \ref{eq:1} is interesting
+The equation $\eqref{eq:1}$ is interesting. The equation $\eqref{eq:splitSample}$ is not that bad.
 
 $$ p^i = t $$ 
 
