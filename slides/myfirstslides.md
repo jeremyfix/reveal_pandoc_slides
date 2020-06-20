@@ -1,29 +1,97 @@
----
-lang: en
-title: "Some example slides"
-subtitle: "A slide deck with various examples"
-author: Jeremy Fix
-duration: 90
-published: false
-slideNumber: true
-theme: beige
-width: 1600
-height: 1000
-transition: none
-keywords:
-- example deck
-- reveal.js 
-- pandoc
----
+## Ununmbered list
 
-## Slide header 1
+**Unnumbered lists** like this:
 
-- A first item with some equation
-- A second item with some equation $$(a+b)^2 = a^2+b^2+2ab$$
-- A first item with some equation
-- A second item with some equation $$(a+b)^2 = a^2+b^2+2ab$$
+    -   Galileo Galilei
+    -   Robert G. Ingersoll
+    -   Jill Tarter
 
-## Math equations  
+-   Galileo Galilei
+-   Robert G. Ingersoll
+-   Jill Tarter
+
+## Numbered list
+
+**Numbered lists** like this:
+
+    1.  Na&iuml;ve realists
+    1.  Scientific realists
+    1.  Constructive empiricists
+    1.  Positivists
+    1.  Relativists
+
+1.  Na&iuml;ve realists
+1.  Scientific realists
+1.  Constructive empiricists
+1.  Positivists
+1.  Relativists
+
+## Fonts
+
+- *This is emphasis.*
+- **This is bold.**
+- _This is also emphasis._
+- __This is also bold.__
+- _This is emphasis **and** bold._
+- __This is bold *and* emphasis.__
+- ~~This is struck-out.~~
+
+## Labels
+
+This markdown memo has been inspired by [this memo](https://github.com/rreece/markdown-memo/blob/master) which is hosted by <https://github.com>
+
+## Footnotes
+
+Here's how you do a footnote[^SomeSpecialNote].
+
+[^SomeSpecialNote]: Lorem ipsum dolor sit amet, duo ut putant verear, nam ut brute utroque.
+    Officiis qualisque conceptam te duo, eu vim soluta numquam, has ut aliquip
+    accusamus. Probo aliquam pri id. Mutat singulis ad vis, eam euismod pertinax
+    an, ea tale volumus vel. At porro soleat est. Debet facilis admodum an sed,
+    at falli feugiat est.
+
+## Quote blocks
+
+The following is a **quote block**. 
+
+    >   It ain't what you don't know that gets you into trouble.
+    >   It's what you know for sure that just ain't so.  
+
+    -- Mark Twain
+
+>   It ain't what you don't know that gets you into trouble.
+>   It's what you know for sure that just ain't so.  
+
+-- Mark Twain
+
+## Highlighting python codes
+
+For defining a sum in **python** 
+```{.python}
+def f(a, b):
+	return a+b
+```
+
+And then in the **terminal**: 
+```{.console}
+fix_jer@stollen:~$ python3 sample.py
+```
+
+## Highlighting C++ codes
+
+Or even **C++** code :
+```{.cpp}
+template<std::size_t N>
+class array {
+	
+	public:
+		array(double val) {};
+		array(const array&) = default;
+
+};
+```
+
+## Math equations
 
 We shall write a sequence of math expressions : 
 
@@ -45,28 +113,9 @@ $$ p^i = t $$
 \label{eq:splitSample}
 \end{equation}
 
+## Figures
 
-## Code highlights
+![The scale of the universe mapped to the branches of science and the hierarchy
+    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=50%}
 
-For defining a sum in **python** 
-```{.python}
-def f(a, b):
-	return a+b
-```
 
-And then in the **terminal**: 
-```{.console}
-fix_jer@stollen:~$ python3 sample.py
-```
-
-Or even **C++** code :
-```{.cpp}
-template<std::size_t N>
-class array {
-	
-	public:
-		array(double val) {};
-		array(const array&) = default;
-
-};
-```

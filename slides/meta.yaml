@@ -1,0 +1,18 @@
+---
+lang: en
+title: "Some example slides"
+subtitle: "A slide deck with various examples"
+author: Jeremy Fix
+duration: 90
+published: false
+slideNumber: true
+theme: white
+width: 1600
+height: 1000
+transition: none
+keywords:
+- example deck
+- reveal.js 
+- pandoc
+---
+
