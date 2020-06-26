@@ -8,8 +8,8 @@ theme: white
 css: 
 - custom.css
 width: 1600
-height: 1000
-margin: 0.
+height: 1200
+margin: 0.1
 center: false
 embedded: false
 hideAddressBar: true
