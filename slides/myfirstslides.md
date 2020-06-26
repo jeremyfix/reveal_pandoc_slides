@@ -96,14 +96,20 @@ class array {
 We shall write a sequence of math expressions : 
 
 \begin{align}
-\exists x \in \mathbb{R}, x& = \sum_{i=0}^{\infty} \pi^{e^i}\label{eq:1}\\
-y&=2
+!n &\sim \frac{n^n}{e^n} \sqrt{2\pi n}\label{eq:1}\\
+e^{i \theta}&= \cos(\theta) + i \sin(\theta)\label{eq:2}
 \end{align}
 
-The equation $\eqref{eq:1}$ is interesting. The equation $\eqref{eq:splitSample}$ is not that bad.
+Equation $\eqref{eq:1}$ is the [Stirling's formula]() while equation $\eqref{eq:2}$ is due to [Euler](https://en.wikipedia.org/wiki/Euler%27s_formula). These are typed in as raw latex
 
-$$ p^i = t $$ 
+```{.latex}
+\begin{align}
+!n &\sim \frac{n^n}{e^n} \sqrt{2\pi n}\label{eq:1}\\
+e^{i \theta}&= \cos(\theta) + i \sin(\theta)\label{eq:2}
+\end{align}
+```
 
+You can also use familiar environments (see the source):
 
 \begin{equation}
 \begin{split} 
@@ -129,33 +135,47 @@ And you could cite the image with ...
 
 ## Videos
 
-You can put videos in your slides with
+You can put videos in your slides with raw html :
 
-<video>
-<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+```{.html}
+<video width="800" controls>
+<source src="http://download.blender.org/peach/trailer/trailer_1080p.ogg" type="video/ogg">
+</video>
+```
+
+<video width="800" controls>
+<source src="http://download.blender.org/peach/trailer/trailer_1080p.ogg" type="video/ogg">
+</video>
 
 
 ## Multiple columns
 
-<div style="text-align: left; float: left;">
-- This is my first left element
 
-- This is my second left element
-
-![The scale of the universe mapped to the branches of science and the hierarchy
-    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=25%}
-
+<div class='multiCol'>
+<div class='col'>
+Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani,... 
+</div>
+<div class='col'>
+Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, ...
+</div>
+</div>
+And simply more regular full-width text in the following. But hey, there is also:
+<div class='multiCol'>
+<div class='col'>Also works for 3 columns...</div>
+<div class='col'>...as we can show in...</div>
+<div class='col'>...this example here.</div>
 </div>
 
-<div style="text-align: right; float: right;">
-- This is my first right element
-- This is my second rightelement 
-
+<div class='multiCol'>
+<div class='col'>
 ![The scale of the universe mapped to the branches of science and the hierarchy
-    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=25%}
-
+    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=30%}
 </div>
-
+<div class='col'>
+![The scale of the universe mapped to the branches of science and the hierarchy
+    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=30%}
+</div>
+</div>
 
 ## Notes
 

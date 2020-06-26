@@ -5,8 +5,11 @@ subtitle: "A slide deck with various examples"
 author: Jeremy Fix
 duration: 90
 theme: white
+css: 
+- custom.css
 width: 1600
 height: 1000
+margin: 0.
 center: false
 embedded: false
 hideAddressBar: true
