@@ -115,7 +115,53 @@ $$ p^i = t $$
 
 ## Figures
 
-![The scale of the universe mapped to the branches of science and the hierarchy
-    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=50%}
+You can put images in your slides with : 
 
+```{.markdown}
+![The caption](the/path/to/the/image){#aref width=50%}
+```
+
+And you could cite the image with ...
+
+![The scale of the universe mapped to the branches of science and the hierarchy
+    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=30%}
+
+
+## Videos
+
+You can put videos in your slides with
+
+<video>
+<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+
+
+## Multiple columns
+
+<div style="text-align: left; float: left;">
+- This is my first left element
+
+- This is my second left element
+
+![The scale of the universe mapped to the branches of science and the hierarchy
+    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=25%}
+
+</div>
+
+<div style="text-align: right; float: right;">
+- This is my first right element
+- This is my second rightelement 
+
+![The scale of the universe mapped to the branches of science and the hierarchy
+    of science. CC BY-SA 3.0 (2013) [Wikimedia Commons](https://en.wikipedia.org/wiki/Science#/media/File:The_Scientific_Universe.png).](img/1024px-the_scientific_universe.png){#fig:scientific_universe width=25%}
+
+</div>
+
+
+## Notes
+
+You can add notes to a slide that are shown only in the speaker view (triggered by pressing the "S" key) or by showing them on every slide by setting the meta.yaml property
+
+```{.yaml}
+showNotes: true
+```
 
