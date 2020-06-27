@@ -177,6 +177,21 @@ And simply more regular full-width text in the following. But hey, there is also
 </div>
 </div>
 
+##  Embedding d3.js
+
+Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we can embed d3.js animations 
+
+<div class="row no-margin-top">
+<div class="fig-container" data-preload data-file="plugins/reveal.js-d3/demo/d3-fig/rainbow.html"></div>
+</div>
+
+## [reveal.js-d3] Including websites 
+
+Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we can embed websites
+
+<div class="fig-container" data-file="https://teaching.pages.centralesupelec.fr/deeplearning-lectures-build/">
+</div>
+
 ## Notes
 
 You can add notes to a slide that are shown only in the speaker view (triggered by pressing the "S" key) or by showing them on every slide by setting the meta.yaml property

@@ -10,3 +10,6 @@
 [submodule "reveal-pdfexport"]
 	path = plugins/reveal-pdfexport
 	url = git@github.com:McShelby/reveal-pdfexport.git
+[submodule "plugins/reveal.js-d3"]
+	path = plugins/reveal.js-d3
+	url = git@github.com:gcalmettes/reveal.js-d3.git
