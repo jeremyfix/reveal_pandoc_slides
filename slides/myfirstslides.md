@@ -10,21 +10,38 @@
 -   Robert G. Ingersoll
 -   Jill Tarter
 
+## Unnumbered list (incremental/nonincremental)
+
+Within the makefile, the lists appear incrementally due to the `-i`. However, you can depart from this default as stated in the [pandoc documentation](https://pandoc.org/MANUAL.html#incremental-lists)
+
+```{.markdown}
+> - Item 1
+> - Item 2
+> - Item 3
+```
+
+> - Item 1
+> - Item 2
+> - Item 3
+
 ## Numbered list
 
 **Numbered lists** like this:
 
-    1.  Na&iuml;ve realists
-    1.  Scientific realists
-    1.  Constructive empiricists
-    1.  Positivists
-    1.  Relativists
+```{.markdown}
+1.  Na&iuml;ve realists
+1.  Scientific realists
+1.  Constructive empiricists
+1.  Positivists
+1.  Relativists
+```
 
 1.  Na&iuml;ve realists
 1.  Scientific realists
 1.  Constructive empiricists
 1.  Positivists
 1.  Relativists
+
 
 ## Fonts
 
@@ -118,6 +135,16 @@ You can also use familiar environments (see the source):
 \end{split}
 \label{eq:splitSample}
 \end{equation}
+
+## Transitions between slides 
+
+Transitions between the slides can be set globally in the yaml file
+
+```{.markdown}
+## Section name
+```
+
+According to the [pandoc documentation](https://pandoc.org/MANUAL.html#background-in-reveal.js-and-beamer) you should be able to set it individually on every slide but that did not work in my tests)
 
 ## Figures
 
