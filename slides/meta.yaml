@@ -3,6 +3,7 @@ lang: en
 title: "Some example slides"
 subtitle: "A slide deck with various examples"
 author: Jeremy Fix
+parallaxBackgroundImage: "./img/csbg.png"
 duration: 90
 theme: white
 css: 
