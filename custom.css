@@ -16,3 +16,15 @@
 	padding: 2% 0 2% 3%; // some vertical, and between columns
 	&:first-of-type { padding-left: 0; } // there's nothing before col1
 }
+
+.reveal p {
+	text-align: left;
+}
+
+.reveal ul {
+	display: block;
+}
+
+.reveal ol {
+	display: block;
+}
