@@ -206,10 +206,18 @@ And simply more regular full-width text in the following. But hey, there is also
 
 ##  Embedding d3.js
 
-Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we can embed d3.js animations 
+Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we can embed d3.js animations , this one is taken from [d3-graph-gallery](https://www.d3-graph-gallery.com)
 
-<div class="row no-margin-top">
-<div class="fig-container" data-preload data-file="plugins/reveal.js-d3/demo/d3-fig/rainbow.html"></div>
+<div class='multiCol'>
+<div class='col'>
+<div class="fig-container" data-preload data-file="slides/d3js/line_filter.html"></div>
+</div>
+<div class='col'>
+<div class="fig-container" data-preload data-file="slides/d3js/line_cursor.html"></div>
+</div>
+<div class='col'>
+<div class="fig-container" data-preload data-file="slides/d3js/line_cursor.html"></div>
+</div>
 </div>
 
 ## [reveal.js-d3] Including websites 

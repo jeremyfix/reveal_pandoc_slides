@@ -4,7 +4,7 @@ pdf_slides=$(patsubst %.md,%.pdf, $(addprefix build/, $(notdir $(md_slides))))
 
 all:buildir $(html_slides)
 	@echo "Generated files: $(html_slides)"
-	@echo "Copying extra"; cp -rf reveal.js plugins img *.css build/
+	@echo "Copying extra"; cp -rf reveal.js plugins img *.css slides build/
 	@echo "Done"
 
 buildir: build
