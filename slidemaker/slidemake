@@ -66,11 +66,10 @@ case $ACTION in
 		mkdir build
 		;;
 	"make")
-		display_info "Let's go"
 		make all
 		display_info "Copy stuff from $SLIDEMAKER_SOURCEDIR"
-		rsync -vhae --progress $SLIDEMAKER_SOURCEDIR/reveal.js build/reveal.js
-		rsync -vhae --progress $SLIDEMAKER_SOURCEDIR/plugins build/plugins
+		rsync -vhae --progress $SLIDEMAKER_SOURCEDIR/reveal.js build/
+		rsync -vhae --progress $SLIDEMAKER_SOURCEDIR/plugins build/
 		;;
 	"clean")
 		rm -rf template.html Makefile build

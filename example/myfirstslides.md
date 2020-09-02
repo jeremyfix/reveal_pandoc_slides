@@ -210,13 +210,13 @@ Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we 
 
 <div class='multiCol'>
 <div class='col'>
-<div class="fig-container" data-preload data-file="slides/d3js/line_filter.html"></div>
+<div class="fig-container" data-preload data-file="./d3js/line_filter.html"></div>
 </div>
 <div class='col'>
-<div class="fig-container" data-preload data-file="slides/d3js/line_cursor.html"></div>
+<div class="fig-container" data-preload data-file="./d3js/line_cursor.html"></div>
 </div>
 <div class='col'>
-<div class="fig-container" data-preload data-file="slides/d3js/line_cursor.html"></div>
+<div class="fig-container" data-preload data-file="./d3js/line_cursor.html"></div>
 </div>
 </div>
 
