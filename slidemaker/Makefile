@@ -2,16 +2,24 @@ md_slides=$(wildcard *.md)
 html_slides=$(patsubst %.md,%.html, $(addprefix build/, $(notdir $(md_slides))))
 pdf_slides=$(patsubst %.md,%.pdf, $(addprefix build/, $(notdir $(md_slides))))
 
-all:buildir $(html_slides)
+.ONESHELL:
+
+define copy_extra_files =
+        @MYFILES=$(ls -d * | grep -v "build" | grep -v "Makefile" | grep -v "template.html" | grep -v "\.md$" | tr '\n' ' ')
+        if [ ! -z "$MYFILES" ]; then
+                @echo "I'm going to copy $MYFILES"
+                @cp -rf $MYFILES ./build/
+        else
+                echo "Nothing extra to copy"
+        fi
+endef
+
+.PHONY: copyextra
+copyextra: ; $(value copy_extra_files)
+
+all: $(html_slides) copyextra
 	@echo "Generated files: $(html_slides)"
-	@echo "Copying extra"; cp -rf reveal.js plugins img *.css slides build/
 	@echo "Done"
-
-buildir: build
-	@mkdir -p build | true
-
-clean:
-	@rm -rf $(html_slides) $(pdf_slides)
 
 build/%.html: %.md template.html meta.yaml
 	@pandoc -s \

@@ -48,6 +48,8 @@ case $ACTION in
 		;;
 	"make")
 		;;
+	"clean")
+		;;
 	*)
 	display_error "Unrecognized command $ACTION"
 	exec echo "$usage_m";;
@@ -60,13 +62,17 @@ case $ACTION in
 	"config")
 		# Perform some symlinks
 		ln -s $SLIDEMAKER_SOURCEDIR/template.html
-		ln -s $SLIDEMAKER_SOURCEDIR/reveal.js
-		ln -s $SLIDEMAKER_SOURCEDIR/plugins
 		ln -s $SLIDEMAKER_SOURCEDIR/Makefile
 		mkdir build
 		;;
 	"make")
-		exec make clean all
+		display_info "Let's go"
+		make all
+		display_info "Copy stuff from $SLIDEMAKER_SOURCEDIR"
+		rsync -vhae --progress $SLIDEMAKER_SOURCEDIR/reveal.js build/reveal.js
+		rsync -vhae --progress $SLIDEMAKER_SOURCEDIR/plugins build/plugins
 		;;
+	"clean")
+		rm -rf template.html Makefile build
 esac
 
