@@ -1,4 +1,4 @@
-md_slides=$(wildcard slides/*.md)
+md_slides=$(wildcard *.md)
 html_slides=$(patsubst %.md,%.html, $(addprefix build/, $(notdir $(md_slides))))
 pdf_slides=$(patsubst %.md,%.pdf, $(addprefix build/, $(notdir $(md_slides))))
 
@@ -13,12 +13,12 @@ buildir: build
 clean:
 	@rm -rf $(html_slides) $(pdf_slides)
 
-build/%.html: slides/%.md template.html slides/meta.yaml
+build/%.html: %.md template.html meta.yaml
 	@pandoc -s \
 		-i \
 		-t revealjs \
 		--mathjax \
-		--metadata-file=slides/meta.yaml \
+		--metadata-file=meta.yaml \
 	   	-V controls \
 		-V date="`LC_TIME=en_US.UTF-8 date "+%B %e, %Y"`" \
 		--template=template.html \
@@ -28,12 +28,12 @@ build/%.html: slides/%.md template.html slides/meta.yaml
 build/%.pdf: build/%.tex
 	@cd build; latexmk -pdf $*.tex
 
-build/%.tex: slides/%.md slides/meta.yaml
+build/%.tex: %.md meta.yaml
 	@pandoc -s \
 		-i \
 		-t beamer \
 		--mathjax \
-		--metadata-file=slides/meta.yaml \
+		--metadata-file=meta.yaml \
 		-V date="`LC_TIME=en_US.UTF-8 date "+%B %e, %Y"`" \
 	   	-V controls \
 		$< \

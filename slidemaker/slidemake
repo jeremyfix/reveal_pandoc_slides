@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+get_source_directory() {
+	SOURCE="${BASH_SOURCE[0]}"
+	while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+		DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+		SOURCE="$(readlink "$SOURCE")"
+		[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+	done
+	DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+	echo $DIR	
+}
+
+GREEN="\\e[1;32m"
+NORMAL="\\e[0;39m"
+RED="\\e[1;31m"
+BLUE="\\e[1;34m"
+MAGENTA="\\e[1;35m"
+
+display_info() {
+	echo -e "$BLUE $1 $NORMAL" 1>&2
+}
+display_wait() {
+	echo -e "$MAGENTA $1 $NORMAL" 1>&2
+}
+display_success() {
+	echo -e "$GREEN $1 $NORMAL" 1>&2
+}
+display_error() {
+	echo -e "$RED $1 $NORMAL" 1>&2
+}
+
+usage_m="usage :  slidemaker [--help] <command>
+
+These are available commands :
+
+config          	Perform some setup (e.g. symlinks)
+make   	            Build the slides
+"
+
+if [[ $# -eq 0 ]]; then
+	exec echo "$usage_m"
+fi
+
+ACTION="$1"
+case $ACTION in 
+	"config")
+		;;
+	"make")
+		;;
+	*)
+	display_error "Unrecognized command $ACTION"
+	exec echo "$usage_m";;
+esac
+
+OUTPUT_DIR=./build
+SLIDEMAKER_SOURCEDIR=`get_source_directory`
+
+case $ACTION in
+	"config")
+		# Perform some symlinks
+		ln -s $SLIDEMAKER_SOURCEDIR/template.html
+		ln -s $SLIDEMAKER_SOURCEDIR/reveal.js
+		ln -s $SLIDEMAKER_SOURCEDIR/plugins
+		ln -s $SLIDEMAKER_SOURCEDIR/Makefile
+		mkdir build
+		;;
+	"make")
+		exec make clean all
+		;;
+esac
+
