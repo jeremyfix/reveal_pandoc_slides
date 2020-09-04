@@ -27,7 +27,6 @@ all: $(html_slides) copyextra
 
 build/%.html: %.md template/template.html meta.yaml
 	@pandoc -s \
-		-i \
 		-t revealjs \
 		--mathjax \
 		--metadata-file=meta.yaml \
