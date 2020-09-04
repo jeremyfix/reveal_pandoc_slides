@@ -61,7 +61,7 @@ SLIDEMAKER_SOURCEDIR=`get_source_directory`
 case $ACTION in
 	"config")
 		# Perform some symlinks
-		ln -s $SLIDEMAKER_SOURCEDIR/template.html
+		ln -s $SLIDEMAKER_SOURCEDIR/template
 		ln -s $SLIDEMAKER_SOURCEDIR/Makefile
 		mkdir build
 		;;
