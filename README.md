@@ -30,6 +30,15 @@ If you need to cleanup,
 
 All the things that are compiled are place in the `build` directory. You can serve this somewhere and open locally with firefox the generated page.
 
+## Exporting in PDF
+
+Using the built-in pdf export does not work very well. Instead :
+
+	npm install -g puppeteer --unsafe-perm=true
+	npm install -g decktape
+
+And then use `decktape`. See the [project page](https://github.com/astefanutti/decktape)
+
 ## References
 
 This project was intially motivated by [this post](http://bloch.ece.gatech.edu/2020/02/15/workflow.html) of M. Bloch.
