@@ -32,12 +32,28 @@ All the things that are compiled are place in the `build` directory. You can ser
 
 ## Exporting in PDF
 
-Using the built-in pdf export does not work very well. Instead :
+Using the built-in pdf export does not work very well. Instead we serve the slides locally and use [decktape](https://github.com/astefanutti/decktape) to convert the HTML slides into PDF.
 
-	npm install -g puppeteer --unsafe-perm=true
-	npm install -g decktape
+You need to be in the directory where the HTML slides are generated. And suppose the generated slides are `slides.html`
 
-And then use `decktape`. See the [project page](https://github.com/astefanutti/decktape)
+We serve locally the files with :
+
+	 python3 -m http.server 8000
+
+You can ensure you can access the slides by opening a browser and loading http://localhost:8000 . You should see your slides.
+
+Then we use the decktape docker image to perform the export into pdf:
+
+	docker run --net=host -v `pwd`:/slides astefanutti/decktape http://localhost:8000/slides.html /tmp/slides.pdf
+	docker cp `docker ps -lq`:/tmp/slides.pdf .
+	docker rm `docker ps -lq`
+
+This will give you the `slides.pdf` file.
+
+I had to use this longer sequence, suggested on the decktape github repo since otherwise I got a EACCESS error when trying to save the slides with :
+
+	docker run --rm --net=host -v `pwd`:/slides astefanutti/decktape http://localhost:8000/slides.html slides.pdf
+
 
 ## References
 
