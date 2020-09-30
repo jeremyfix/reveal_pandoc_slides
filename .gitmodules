@@ -1,15 +1,15 @@
 [submodule "slidemaker/reveal.js"]
 	path = slidemaker/reveal.js
-	url = git@github.com:hakimel/reveal.js.git
+	url = https://github.com/hakimel/reveal.js.git
 [submodule "slidemaker/plugins/reveal-pdfexport"]
 	path = slidemaker/plugins/reveal-pdfexport
-	url = git@github.com:McShelby/reveal-pdfexport.git
+	url = https://github.com/McShelby/reveal-pdfexport.git
 [submodule "slidemaker/plugins/reveal.js-d3"]
 	path = slidemaker/plugins/reveal.js-d3
-	url = git@github.com:gcalmettes/reveal.js-d3.git
+	url = https://github.com/gcalmettes/reveal.js-d3.git
 [submodule "slidemaker/plugins/reveal.js-elapsed-time-bar"]
 	path = slidemaker/plugins/reveal.js-elapsed-time-bar
-	url = git@github.com:tkrkt/reveal.js-elapsed-time-bar.git
+	url = https://github.com/tkrkt/reveal.js-elapsed-time-bar.git
 [submodule "slidemaker/plugins/reveal.js-plugins"]
 	path = slidemaker/plugins/reveal.js-plugins
-	url = git@github.com:rajgoel/reveal.js-plugins.git
+	url = https://github.com/rajgoel/reveal.js-plugins.git
