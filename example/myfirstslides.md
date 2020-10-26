@@ -1,3 +1,5 @@
+# Lists, fonts
+
 ## Ununmbered list
 
 **Unnumbered lists** like this:
@@ -81,6 +83,8 @@ The following is a **quote block**.
 
 -- Mark Twain
 
+# Code and equations
+
 ## Highlighting python codes
 
 For defining a sum in **python** 
@@ -136,6 +140,8 @@ You can also use familiar environments (see the source):
 \label{eq:splitSample}
 \end{equation}
 
+# Transitions
+
 ## Transitions between slides 
 
 Transitions between the slides can be set globally in the yaml file
@@ -145,6 +151,36 @@ Transitions between the slides can be set globally in the yaml file
 ```
 
 According to the [pandoc documentation](https://pandoc.org/MANUAL.html#background-in-reveal.js-and-beamer) you should be able to set it individually on every slide but that did not work in my tests)
+
+## Progressive content with pauses
+
+You can display content
+
+. . . 
+
+progressively
+
+. . . 
+
+by introducing pauses. 
+
+. . . 
+
+It also works 
+
+. . .
+
+- for displaying items
+
+. . .
+
+- one after
+
+. . .
+
+- the other
+
+# Figures and videos
 
 ## Figures
 
@@ -175,7 +211,9 @@ You can put videos in your slides with raw html :
 </video>
 
 
-## Multiple columns
+# Column layout
+
+## Multiple columns 
 
 
 <div class='multiCol'>
@@ -204,6 +242,8 @@ And simply more regular full-width text in the following. But hey, there is also
 </div>
 </div>
 
+# Animated and/or interactive displays
+
 ##  Embedding d3.js
 
 Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we can embed d3.js animations , this one is taken from [d3-graph-gallery](https://www.d3-graph-gallery.com)
@@ -227,6 +267,8 @@ Using the plugin [reveal.js-d3](https://github.com/gcalmettes/reveal.js-d3), we 
 <div class="fig-container" data-file="https://teaching.pages.centralesupelec.fr/deeplearning-lectures-build/">
 </div>
 
+# Extra stuff
+
 ## Notes
 
 You can add notes to a slide that are shown only in the speaker view (triggered by pressing the "S" key) or by showing them on every slide by setting the meta.yaml property
@@ -234,4 +276,15 @@ You can add notes to a slide that are shown only in the speaker view (triggered 
 ```{.yaml}
 showNotes: true
 ```
+
+Actually you should be able to open the speaker view... but even using apparently a local server with `python3 -m http.server 8000`, i'm unable to open the speaker view. I do not know why. However, setting the boolean in the yaml file actually correctly display the notes aside. 
+
+::: notes
+
+This is my note.
+
+- It can contain Markdown
+- like this list
+
+:::
 
