@@ -28,6 +28,7 @@ def tikz2image(tikz_src, filetype, outfile):
     f = open('tikz.tex', 'w')
     f.write("""\\documentclass[tikz]{standalone}
             \\usetikzlibrary{arrows.meta}
+            \\usepackage{tkz-graph}
             \\usepackage{graphicx}
              \\begin{document}
              """)
