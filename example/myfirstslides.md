@@ -242,6 +242,61 @@ And simply more regular full-width text in the following. But hey, there is also
 </div>
 </div>
 
+# Graphs and images with GraphViz and Tikz
+
+## Drawing graphs with Graphviz
+
+    -   Galileo Galilei
+    -   Robert G. Ingersoll
+    -   Jill Tarter
+
+```{.graphviz #pandocdiag caption="Graph of pandoc compilation pipeline" width=80%}
+digraph G {
+	rankdir="LR";	
+
+node [shape=box]
+bgcolor="#ffffff00"
+
+input [label = "example.md"];
+markdown_parser [label = "Pandoc Markdown parser"];
+filter [label = "graphviz.py filter"];
+html_writer [label = "Pandoc HTML writer"];
+output [label = "example.html"];
+
+input -> markdown_parser;
+
+markdown_parser -> filter [label = " AST"];
+
+filter -> html_writer [label = " AST"];
+
+html_writer -> output;
+
+}
+```
+
+## Drawing images with tikz
+
+```{.tikz width=40%}
+
+\begin{tikzpicture}[scale=2.0]
+
+
+\def \n {5}
+\def \radius {3cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[draw, circle] at ({360/\n * (\s - 1)}:\radius) {$\s$};
+  \draw[->, >=latex] ({360/\n * (\s - 1)+\margin}:\radius) 
+    arc ({360/\n * (\s - 1)+\margin}:{360/\n * (\s)-\margin}:\radius);
+}
+
+\node at (0, 0) {\includegraphics[width=0.4\textwidth]{./img/boy.png}};
+\end{tikzpicture}
+```
+
+
 # Animated and/or interactive displays
 
 ##  Embedding d3.js

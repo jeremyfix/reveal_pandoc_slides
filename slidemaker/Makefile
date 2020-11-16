@@ -29,6 +29,8 @@ build/%.html: %.md template/template.html meta.yaml
 	@pandoc -s \
 		-t revealjs \
 		--mathjax \
+		--filter ./template/graphviz.py \
+		--filter ./template/tikz.py \
 		--metadata-file=meta.yaml \
 		$(BIBLIO) \
 	   	-V controls \
@@ -46,6 +48,8 @@ build/%.tex: %.md meta.yaml
 		-t beamer \
 		$(BIBLIO) \
 		--mathjax \
+		--filter ./template/graphviz.py \
+		--filter ./template/tikz.py \
 		--metadata-file=meta.yaml \
 		-V date="`LC_TIME=en_US.UTF-8 date "+%B %e, %Y"`" \
 	   	-V controls \
