@@ -46,6 +46,12 @@ def tikz2image(tikz_src, filetype, outfile):
         f2 = '{}.pdf'.format(outfile)
         lg.write('copied {} to {}'.format(f1, f2))
         shutil.copyfile(f1, f2)
+    elif filetype == 'svg':
+        f1 = os.path.join(tmpdir, 'tikz.pdf')
+        f2 = '{}.{}'.format(outfile, filetype)
+        lg.write('---------------------\n --- converting {} to {} --- \n'.format(f1, f2))
+        call(["pdf2svg", f1, f2], stderr=lg, stdout=lg)
+        lg.write('---------------------\n')
     else:
         f1 = os.path.join(tmpdir, 'tikz.pdf')
         f2 = '{}.{}'.format(outfile, filetype)
@@ -63,7 +69,6 @@ def tikz(key, value, format, _):
             # sys.stderr.write("{};; {};; {}".format(caption, typef, keyvals))
             outfile = get_filename4code("tikz", code)
             filetype = get_extension(format, "svg", html="svg", latex="pdf")
-            # filetype = get_extension(format, "png", html="png", latex="pdf")
             dest = outfile + '.' + filetype
             if not os.path.isfile(dest):
                 tikz2image(code, filetype, outfile)

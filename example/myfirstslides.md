@@ -281,7 +281,7 @@ html_writer -> output;
 \begin{tikzpicture}[scale=2.0]
 
 
-\def \n {5}
+\def \n {6}
 \def \radius {3cm}
 \def \margin {8} % margin in angles, depends on the radius
 
@@ -291,6 +291,7 @@ html_writer -> output;
   \draw[->, >=latex] ({360/\n * (\s - 1)+\margin}:\radius) 
     arc ({360/\n * (\s - 1)+\margin}:{360/\n * (\s)-\margin}:\radius);
 }
+
 
 \node at (0, 0) {\includegraphics[width=0.4\textwidth]{./img/boy.png}};
 \end{tikzpicture}
