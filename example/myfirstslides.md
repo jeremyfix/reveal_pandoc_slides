@@ -246,13 +246,11 @@ And simply more regular full-width text in the following. But hey, there is also
 
 ## Drawing graphs with Graphviz
 
-    -   Galileo Galilei
-    -   Robert G. Ingersoll
-    -   Jill Tarter
+Example of a graph generated from graphviz :
 
 ```{.graphviz #pandocdiag caption="Graph of pandoc compilation pipeline" width=80%}
 digraph G {
-	rankdir="LR";	
+rankdir="LR";	
 
 node [shape=box]
 bgcolor="#ffffff00"
@@ -275,6 +273,8 @@ html_writer -> output;
 ```
 
 ## Drawing images with tikz
+
+Example of a graph generated from Tikz.
 
 ```{.tikz width=40%}
 
