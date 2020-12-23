@@ -32,7 +32,7 @@ All the things that are compiled are place in the `build` directory. You can ser
 
 ## Exporting in PDF
 
-Using the built-in pdf export does not work very well. Instead we serve the slides locally and use [decktape](https://github.com/astefanutti/decktape) to convert the HTML slides into PDF.
+Using the built-in pdf export does not work very well (actually, that may not be completely true, I must give a try viewing the pdf from google chrome, it seems to be working). Instead we serve the slides locally and use [decktape](https://github.com/astefanutti/decktape) to convert the HTML slides into PDF.
 
 You need to be in the directory where the HTML slides are generated. And suppose the generated slides are `slides.html`
 
