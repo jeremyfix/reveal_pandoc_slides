@@ -30,6 +30,15 @@ If you need to cleanup,
 
 All the things that are compiled are place in the `build` directory. You can serve this somewhere and open locally with firefox the generated page.
 
+## Locally serving
+
+To test locally what your slides will look like, you can start a simple http server on your host. 
+
+	cd build
+	python3 -m http.server
+
+and then open a browser on localhost:8000 
+
 ## Exporting in PDF
 
 Using the built-in pdf export does not work very well (actually, that may not be completely true, I must give a try viewing the pdf from google chrome, it seems to be working). Instead we serve the slides locally and use [decktape](https://github.com/astefanutti/decktape) to convert the HTML slides into PDF.
