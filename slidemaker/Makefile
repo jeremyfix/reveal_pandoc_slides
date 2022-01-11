@@ -9,13 +9,7 @@ endif
 .ONESHELL:
 
 define copy_extra_files =
-        @MYFILES=$(ls -d * | grep -v "build" | grep -v "Makefile" | grep -v "template" | grep -v "\.md$" | tr '\n' ' ')
-        if [ ! -z "$MYFILES" ]; then
-                @echo "I'm going to copy $MYFILES"
-                @cp -rf $MYFILES ./build/
-        else
-                echo "Nothing extra to copy"
-        fi
+        rsync -r --exclude "build" --exclude "Makefile" --exclude "template" . build/
 endef
 
 .PHONY: copyextra
