@@ -14,6 +14,13 @@ Then you are advised to symlink to `slidemaker`, e.g.
 	cd ~/.local/bin
 	ln -s /path/where/the/git/is/slidemaker/slidemake
 
+## Dependencies
+
+You need to install some dependencies before being able to compile slides. On an ubuntu box :
+
+	sudo apt install libgraphviz-dev pandoc-citeproc
+ 	python3 -m pip install pygraphviz pandocfilters
+
 ## Compilation
 
 Now, suppose you have a worktree somewhere with your markdown files, image directories, d3js scripts, and so (see the `example` directory for an example). The first time, we need to setup some stuff
