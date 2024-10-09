@@ -6,7 +6,7 @@ You need a recent version of pandoc. For sure, this will work with pandoc 2.10.1
 
 You need to clone the repository 
 
-	git clone --recursive git@github.com:jeremyfix/reveal_pandoc_slides.git
+	git clone --recursive https://github.com/jeremyfix/reveal_pandoc_slides.git
 	cd reveal_pandoc_slides; git submodule update --init --recursive
 
 Then you are advised to symlink to `slidemaker`, e.g.
