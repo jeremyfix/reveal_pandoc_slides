@@ -3,7 +3,7 @@ html_slides=$(patsubst %.md,%.html, $(addprefix build/, $(notdir $(md_slides))))
 pdf_slides=$(patsubst %.md,%.pdf, $(addprefix build/, $(notdir $(md_slides))))
 BIBLIO=
 ifneq (,$(wildcard ./biblio.bib))
-	BIBLIO= --filter pandoc-citeproc --bibliography biblio.bib --csl=./template/apsa.csl
+	BIBLIO= --citeproc --bibliography biblio.bib --csl=./template/apsa.csl
 endif
 
 .ONESHELL:
