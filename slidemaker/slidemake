@@ -63,6 +63,7 @@ case $ACTION in
 		# Perform some symlinks
 		ln -s $SLIDEMAKER_SOURCEDIR/template
 		ln -s $SLIDEMAKER_SOURCEDIR/Makefile
+		ln -s $SLIDEMAKER_SOURCEDIR/reveal.js
 		mkdir build
 		;;
 	"make")

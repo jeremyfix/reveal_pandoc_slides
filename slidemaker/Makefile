@@ -22,6 +22,7 @@ all: $(html_slides) copyextra
 build/%.html: %.md template/template.html meta.yaml
 	@pandoc -s \
 		-t revealjs \
+		--variable revealjs-url:./reveal.js \
 		--mathjax \
 		--filter ./template/graphviz.py \
 		--filter ./template/tikz.py \
