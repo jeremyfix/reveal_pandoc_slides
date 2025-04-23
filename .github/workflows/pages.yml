@@ -1,0 +1,81 @@
+name: slides
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+
+  slides:
+    runs-on: ubuntu-24.04
+
+    permissions:
+      contents: read
+
+    steps:
+      # We do not checkout but rather git clone to show
+      # how people would use this repository in their own action
+      # - uses: actions/checkout@v4 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' 
+      - name: Install dependencies
+        run: >
+          sudo apt install pandoc libgraphviz-dev;
+          python3 -m pip install pygraphviz pandocfilters;
+      - name: Clone slidemaker
+        run: >
+          git clone --recursive https://github.com/jeremyfix/reveal_pandoc_slides.git $HOME/reveal_pandoc_slides;
+          cd $HOME/reveal_pandoc_slides; git submodule update --init --recursive ; 
+          mkdir -p $HOME/.local/bin;
+          ln -s $HOME/reveal_pandoc_slides/slidemaker/slidemake $HOME/.local/bin/slidemake
+      - name: Slidemaker configuration
+        run: cd exemple && slidemake config
+      - name: Builds the slides
+        run: cd exemple && slidemake make
+      - name: Upload the generated slides
+        uses: actions/upload-artifact@v4
+        with:
+          path: exemple/build
+          name: slides
+
+
+  # Gather the generated artifacts for the github page
+  artifacts:
+    runs-on: ubuntu-latest
+    needs: [slides]
+    steps:
+      - name: Prepare the site directory
+        run: mkdir _site
+
+      - name: Download the Slides
+        uses: actions/download-artifact@v4
+        with:
+          name: slides
+          path: _site
+
+      - name: Upload github pages artifcats
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [artifacts]
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
+
+    
+
