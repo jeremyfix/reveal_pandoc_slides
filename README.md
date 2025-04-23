@@ -1,5 +1,7 @@
 # Lecture slides with pandoc + reveal.js + markdown
 
+You can check example slides generated with this toolchain at [https://jeremyfix.github.io/reveal_pandoc_slides/myfirstslides.html](https://jeremyfix.github.io/reveal_pandoc_slides/myfirstslides.html).
+
 ## Installation
 
 You need a recent version of pandoc. For sure, this will work with pandoc 2.10.1. If necessary, [install a more recent version](https://pandoc.org/installing.html).
