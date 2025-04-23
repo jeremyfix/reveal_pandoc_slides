@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11' 
       - name: Install dependencies
         run: >
-          sudo apt install pandoc libgraphviz-dev;
+          sudo apt install pandoc libgraphviz-dev graphviz;
           python3 -m pip install pygraphviz pandocfilters;
       - name: Clone slidemaker
         run: >
