@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: >
           sudo apt install pandoc libgraphviz-dev graphviz;
-          sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra;
+          sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra pdf2svg;
           python3 -m pip install pygraphviz pandocfilters;
       - name: Clone slidemaker
         run: >
