@@ -13,9 +13,6 @@ jobs:
       contents: read
 
     steps:
-      # We do not checkout but rather git clone to show
-      # how people would use this repository in their own action
-      # - uses: actions/checkout@v4 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11' 
@@ -29,6 +26,8 @@ jobs:
           cd $HOME/reveal_pandoc_slides; git submodule update --init --recursive ; 
           mkdir -p $HOME/.local/bin;
           ln -s $HOME/reveal_pandoc_slides/slidemaker/slidemake $HOME/.local/bin/slidemake
+      # We do checkout but only to get the example slides to compile
+      - uses: actions/checkout@v4 
       - name: Slidemaker configuration
         run: cd exemple && slidemake config
       - name: Builds the slides
