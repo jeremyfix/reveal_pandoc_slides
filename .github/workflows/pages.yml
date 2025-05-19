@@ -74,7 +74,7 @@ jobs:
       - name: Upload the generated slides
         uses: actions/upload-artifact@v4
         with:
-          path: /home/runner/reveal_pandoc_slides/example/build  # using $HOME does not seem to work
+          path: $HOME/reveal_pandoc_slides/example/build  # using $HOME does not seem to work
           name: slides
 
 
