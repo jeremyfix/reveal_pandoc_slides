@@ -12,7 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Generic tools 
 RUN apt update && \
-	apt install -y make git python3-pip wget curl
+	apt install -y make git python3-pip wget curl rsync
 
 # Latex 
 RUN apt update && apt install -y latexmk \
