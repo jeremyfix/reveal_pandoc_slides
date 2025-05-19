@@ -66,15 +66,15 @@ jobs:
 
     steps:
       - name: Get the slides
-        run: git clone https://github.com/jeremyfix/reveal_pandoc_slides.git $HOME/reveal_pandoc_slides
+        run: git clone https://github.com/jeremyfix/reveal_pandoc_slides.git /tmp/reveal_pandoc_slides
       - name: Slidemaker configuration
-        run: cd $HOME/reveal_pandoc_slides/example && /root/.local/bin/slidemake config
+        run: cd /tmp/reveal_pandoc_slides/example && /root/.local/bin/slidemake config
       - name: Builds the slides
-        run: cd $HOME/reveal_pandoc_slides/example && /root/.local/bin/slidemake make
+        run: cd /tmp/reveal_pandoc_slides/example && /root/.local/bin/slidemake make
       - name: Upload the generated slides
         uses: actions/upload-artifact@v4
         with:
-          path: $HOME/reveal_pandoc_slides/example/build  # using $HOME does not seem to work
+          path: /tmp/reveal_pandoc_slides/example/build  # using $HOME does not seem to work
           name: slides
 
 
