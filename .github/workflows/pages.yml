@@ -65,6 +65,8 @@ jobs:
       contents: read
 
     steps:
+      - name: Get the slides
+        run: git clone https://github.com/jeremyfix/reveal_pandoc_slides.git $HOME/reveal_pandoc_slides
       - name: Slidemaker configuration
         run: cd $HOME/reveal_pandoc_slides/example && $HOME/.local/bin/slidemake config
       - name: Builds the slides
