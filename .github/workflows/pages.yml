@@ -59,7 +59,7 @@ jobs:
     needs: docker-image
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/jeremyfix/reveal_pandoc_slides:latest
+      image: ghcr.io/jeremyfix/reveal_pandoc_slides:master
 
     permissions:
       contents: read
