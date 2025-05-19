@@ -28,3 +28,7 @@ RUN apt update && apt install -y pdf2svg
 RUN apt update && apt install -y pandoc libgraphviz-dev graphviz
 
 RUN python3 -m pip install pygraphviz pandocfilters
+
+RUN git clone --recursive https://github.com/jeremyfix/reveal_pandoc_slides.git $HOME/reveal_pandoc_slides
+RUN cd $HOME/reveal_pandoc_slides; git submodule update --init --recursive
+RUN mkdir -p $HOME/.local/bin && ln -s $HOME/reveal_pandoc_slides/slidemaker/slidemake $HOME/.local/bin/slidemake

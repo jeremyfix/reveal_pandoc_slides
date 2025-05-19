@@ -65,16 +65,10 @@ jobs:
       contents: read
 
     steps:
-      - name: Clone slidemaker
-        run: >
-          git clone --recursive https://github.com/jeremyfix/reveal_pandoc_slides.git $HOME/reveal_pandoc_slides;
-          cd $HOME/reveal_pandoc_slides; git submodule update --init --recursive ; 
-          mkdir -p $HOME/.local/bin;
-          ln -s $HOME/reveal_pandoc_slides/slidemaker/slidemake $HOME/.local/bin/slidemake
       - name: Slidemaker configuration
-        run: cd $HOME/reveal_pandoc_slides/example && slidemake config
+        run: cd $HOME/reveal_pandoc_slides/example && $HOME/.local/bin/slidemake config
       - name: Builds the slides
-        run: cd $HOME/reveal_pandoc_slides/example && slidemake make
+        run: cd $HOME/reveal_pandoc_slides/example && $HOME/.local/bin/slidemake make
       - name: Upload the generated slides
         uses: actions/upload-artifact@v4
         with:
