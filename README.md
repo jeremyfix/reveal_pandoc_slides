@@ -1,3 +1,9 @@
+
+**Warning**
+
+You should probably not consider using these scripts anymore. Look at [Quarto](https://quarto.org/), this is the same but muuuuuuchhhh better :) 
+
+
 # Lecture slides with pandoc + reveal.js + markdown
 
 You can check example slides generated with this toolchain at [https://jeremyfix.github.io/reveal_pandoc_slides/myfirstslides.html](https://jeremyfix.github.io/reveal_pandoc_slides/myfirstslides.html).
